@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      
+        a {
+          text-decoration: none;
+          margin: 15px auto;
+          font-family: "IRANSANS";
+          font-size: 20px;
+          color: #ffffff;
+          cursor: pointer;
+          border-radius: 100px;
+          padding: 15px 20px;
+          border: 0px solid #000;   
+          }
+
+          .pulse-button-hover{
+            margin-top: 30px;
+          }
+        
+        /* Initiate Auto-Pulse animations */
+        a.pulse-button {
+          animation: borderPulse 1000ms infinite ease-out, colorShift 10000ms infinite ease-in;
+        }
+        
+        /* Initiate color change for pulse-on-hover */
+        a.pulse-button-hover {
+          animation: colorShift 10000ms infinite ease-in;
+        }
+        
+        /* Continue animation and add shine on hover */
+        a:hover,
+        a:focus {
+          animation: borderPulse 1000ms infinite ease-out, colorShift 10000ms infinite ease-in, hoverShine 200ms;
+        }
+        
+        /* Declate color shifting animation */
+        @keyframes colorShift {
+          0%, 100% {
+              background: #0045e6;
+          }
+          33% {
+            background: #fb3e3e;
+          }
+          66%{
+            background: #0dcc00;
+          }
+        }
+        
+        /* Declare border pulse animation */
+        @keyframes borderPulse {
+          0% {
+            box-shadow: inset 0px 0px 0px 5px rgba(255, 255, 255,.4), 0px 0px 0px 0px rgba(255,255,255,1);
+          }
+          100% {
+            box-shadow: inset 0px 0px 0px 3px rgba(117, 117, 255,.2), 0px 0px 0px 10px rgba(255,255,255,0);
+          }
+        }
+        
+        /* Declare shine on hover animation */
+        @keyframes hoverShine {
+          0%{
+            background-image: linear-gradient(135deg, rgba(255,255,255,.4) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,0) 100%);
+          }
+          50%{  
+            background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.4) 50%, rgba(255,255,255,0) 100%);
+          }
+          100%{
+            background-image: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 50%, rgba(255,255,255,.4) 100%);
+          }
+        }</style>
+  </head>
+  <body>
+    <div style="margin-top: 50px; text-align: center;">
+      <a class="pulse-button-hover">button</a>
+      <a class="pulse-button-hover">button</a>
+      <a class="pulse-button-hover">button</a>
+      <a class="pulse-button-hover">button</a>
+    </div>
+    
+  </body>
+</html>
